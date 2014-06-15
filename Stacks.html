@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Stacks</title>
+    <script>
+        /*Stack Definition*/
+        function Stack(){
+            this.data =[];
+        }
+
+        /*Stack prototype functions*/
+        Stack.prototype.push = function (elem)
+        {
+            this.data.unshift(elem);
+        }
+
+        Stack.prototype.pop = function (){
+           var x = this.data.shift();
+            return x;
+        }
+
+        Stack.prototype.peek = function () {
+            return this.data[0];
+        }
+
+        Stack.prototype.isEmpty = function() {
+            if(this.data.length == 0)
+                return true;
+            else
+                return false;
+        }
+
+        var s1 = new Stack();
+        s1.push(1);
+        s1.push(2);
+        s1.push(3);
+        s1.push(4);
+        s1.push(5);
+        s1.push(6);
+
+        console.log(s1);
+        for(var i=0; i<s1.data.length; i++)
+        {
+            console.log("s["+i+"]= "+s1.data[i]);
+        }
+
+        console.log("Checking to see if stack is empty: "+s1.isEmpty());
+
+        console.log("The top of the stack points to: "+s1.peek());
+
+        console.log("Pushing an element 7");
+
+        s1.push(7);
+
+        console.log("Element popped is: "+s1.pop());
+        console.log("Stack contains:")
+        for(var i=0; i<s1.data.length; i++)
+        {
+            console.log("s["+i+"]= "+s1.data[i]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

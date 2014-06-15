@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Queues</title>
+    <script>
+        /*Queue Implementation*/
+        Queue.prototype.enqueue = function (elem) {
+            this.data.push(elem);
+        }
+
+
+        Queue.prototype.dequeue = function (){
+            return this.data.shift();
+        }
+
+        Queue.prototype.peek = function () {
+            return this.data[0];
+        }
+
+        function Queue() {
+            this.data = [];
+        }
+
+
+        var q1 = new Queue();
+        q1.enqueue(1);
+        q1.enqueue(2);
+        q1.enqueue(3);
+        q1.enqueue(4);
+        q1.enqueue(5);
+        q1.enqueue(6);
+
+        console.log(q1);
+        var x = q1.dequeue()
+        console.log('The element dequeued is: '+x);
+        console.log('Queue now contains: '+q1);
+        var pk = q1.peek();
+        console.log('The element at the front of the queue is '+pk);
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
